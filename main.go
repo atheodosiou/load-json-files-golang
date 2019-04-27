@@ -10,8 +10,10 @@ import (
 type Config struct {
 	Application string `json:"application"`
 	Database    struct {
-		Host string `json:"host"`
-		Port string `json:"port"`
+		Host     string `json:"host"`
+		Port     string `json:"port"`
+		Name     string `json:"name"`
+		Password string `json:"password"`
 	} `json:"database"`
 }
 
@@ -32,8 +34,9 @@ func LoadConfiguration(filename string) (Config, error) {
 }
 
 func main() {
-	fmt.Println("Starting the application...")
+	fmt.Println("Starting the application...\n")
 	config, _ := LoadConfiguration("config.json")
 
 	fmt.Println("Application name: " + config.Application + "\nDatabase: \nHost: " + config.Database.Host + "\nPort: " + config.Database.Port)
+	fmt.Println("Database name: " + config.Database.Name + "\nDatabase password: " + config.Database.Password)
 }
