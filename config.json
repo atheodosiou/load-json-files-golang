@@ -1,0 +1,7 @@
+{
+    "application":"Load JSON files with Golang",
+    "database":{
+        "host":"test",
+        "port":"3000"
+    }    
+}
